@@ -1,13 +1,23 @@
-execute pathogen#infect()
-
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'altercation/vim-colors-solarized'
+
+call vundle#end()
+
+filetype indent on
+filetype plugin on
 
 " Set map leader as comma
 let mapleader = ","
 let g:mapleader = ","
-
-filetype indent on
-filetype plugin on
 
 syntax on
 
