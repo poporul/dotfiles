@@ -12,6 +12,7 @@ Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
+filetype on
 filetype indent on
 filetype plugin on
 
@@ -114,7 +115,12 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
+nnoremap <C-x> <C-w>x
 if !has('gui_running')
   " Compatibility for Terminal
   let g:solarized_termtrans=1
