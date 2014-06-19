@@ -12,6 +12,10 @@ Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
+set backupdir=$HOME/.vim/backup/
+set directory=$HOME/.vim/swap/
+set undodir=$HOME/.vim/undo/
+
 filetype on
 filetype indent on
 filetype plugin on
