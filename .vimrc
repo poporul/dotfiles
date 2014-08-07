@@ -66,12 +66,6 @@ highlight SpecialKey guifg=#4a4a59
 " use the same symbols as textmate for tabstops and eols
 set listchars=tab:▸\ ,eol:¬
 
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
-
 au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 
@@ -85,7 +79,7 @@ set ignorecase
 set smartcase
 
 "This unsets the last search pattern register by hitting return
-nnoremap <cr> :noh<cr><cr>
+nnoremap <cr> :noh<cr>
 
 " Shortcut for save
 nnoremap <leader>w :w!<cr>
