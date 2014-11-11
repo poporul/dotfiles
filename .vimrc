@@ -26,7 +26,7 @@ let g:mapleader = ","
 
 syntax on
 
-colorscheme solarized
+colorscheme default
 
 set history=1000
 
@@ -52,6 +52,7 @@ set scrolloff=2
 
 " Tabs
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
