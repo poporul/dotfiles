@@ -115,6 +115,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+nnoremap <leader>t :tabnew<CR>
+
+nnoremap <S-l> :tabnext<CR>
+nnoremap <S-h> :tabprevious<CR>
+
 nnoremap <C-x> <C-w>x
 if !has('gui_running')
   " Compatibility for Terminal
