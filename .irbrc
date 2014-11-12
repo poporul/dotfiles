@@ -1,3 +1,4 @@
+require 'pp'
 require 'irb/completion'
 
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irbhistory"
