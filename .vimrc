@@ -94,14 +94,6 @@ set backspace=indent,eol,start
 " 256 colors for terminal vim
 set t_Co=256
 
-" Making cursor a bar in insert mode
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
 
 " Disabling arrow keys
 noremap <Up> <NOP>
@@ -121,15 +113,32 @@ nnoremap <S-l> :tabnext<CR>
 nnoremap <S-h> :tabprevious<CR>
 
 nnoremap <C-x> <C-w>x
-if !has('gui_running')
-  " Compatibility for Terminal
-  let g:solarized_termtrans=1
 
-  if (&t_Co >= 256 || $TERM == 'xterm-256color')
-    " Do nothing, it handles itself
-  else
-    " Make Solarized use 16 colors for Terminal support
-    let g:solarized_termcolors=16
+function! ConfigSolarized()
+  if !has('gui_running')
+    " Compatibility for Terminal
+    let g:solarized_termtrans=1
+
+    if (&t_Co >= 256 || $TERM == 'xterm-256color')
+      " Do nothing, it handles itself
+    else
+      " Make Solarized use 16 colors for Terminal support
+      let g:solarized_termcolors=16
+    endif
   endif
-endif
+endfunction
+
+function! ConfigTmux()
+  " Making cursor a bar in insert mode
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+endfunction
+
+call ConfigSolarized()
+call ConfigTmux()
 
