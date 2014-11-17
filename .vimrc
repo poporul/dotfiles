@@ -10,6 +10,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+
 call vundle#end()
 
 set backupdir=$HOME/.vim/backup/
@@ -43,7 +46,7 @@ set showcmd
 
 " Show current position
 set ruler
-set cursorline
+"set cursorline
 set hidden
 set autoindent
 
@@ -94,6 +97,7 @@ set backspace=indent,eol,start
 " 256 colors for terminal vim
 set t_Co=256
 
+set mouse=a
 
 " Disabling arrow keys
 noremap <Up> <NOP>
