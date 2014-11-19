@@ -115,8 +115,8 @@ nnoremap <C-x> <C-w>x
 
 nnoremap <leader>t :tabnew<CR>
 
-nnoremap <S-l> :tabnext<CR>
-nnoremap <S-h> :tabprevious<CR>
+nnoremap <C-S-l> :tabnext<CR>
+nnoremap <C-S-h> :tabprevious<CR>
 
 nnoremap - x
 nnoremap <Space> viw
