@@ -75,12 +75,19 @@ au BufRead,BufNewFile *.json set ft=javascript
 
 " NERDTree
 let NERDTreeShowHidden=1
-map <leader>q :NERDTreeToggle<CR>
 
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" Allow backspacing for everything
+set backspace=indent,eol,start
+
+" 256 colors for terminal vim
+set t_Co=256
+
+set mouse=a
 
 "This unsets the last search pattern register by hitting return
 nnoremap <cr> :noh<cr>
@@ -91,13 +98,7 @@ nnoremap <leader>w :w!<cr>
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
-" Allow backspacing for everything
-set backspace=indent,eol,start
-
-" 256 colors for terminal vim
-set t_Co=256
-
-set mouse=a
+map <leader>q :NERDTreeToggle<CR>
 
 " Disabling arrow keys
 noremap <Up> <NOP>
@@ -110,13 +111,15 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+nnoremap <C-x> <C-w>x
 
 nnoremap <leader>t :tabnew<CR>
 
 nnoremap <S-l> :tabnext<CR>
 nnoremap <S-h> :tabprevious<CR>
 
-nnoremap <C-x> <C-w>x
+nnoremap - x
+nnoremap <Space> viw
 
 function! ConfigSolarized()
   if !has('gui_running')
