@@ -29,3 +29,10 @@ class Object
   end
 end
 
+def quick(repetitions = 1, &block)
+  require 'benchmark'
+  Benchmark.bmbm do |b|
+    b.report { repetitions.times(&block) }
+  end
+  nil
+end
