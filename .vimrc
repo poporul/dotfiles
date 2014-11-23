@@ -10,6 +10,10 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'groenewege/vim-less'
+
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 
@@ -121,6 +125,8 @@ nnoremap <C-S-h> :tabprevious<CR>
 nnoremap - x
 nnoremap <Space> viw
 
+imap <C-d> <Esc>ddi
+
 function! ConfigSolarized()
   if !has('gui_running')
     " Compatibility for Terminal
@@ -148,4 +154,3 @@ endfunction
 
 call ConfigSolarized()
 call ConfigTmux()
-
