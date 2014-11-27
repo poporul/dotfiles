@@ -127,22 +127,18 @@ nnoremap <Space> viw
 
 imap <C-d> <Esc>ddi
 
-function! ConfigSolarized()
+function! s:ConfigSolarized()
   if !has('gui_running')
-    " Compatibility for Terminal
     let g:solarized_termtrans=1
 
     if (&t_Co >= 256 || $TERM == 'xterm-256color')
-      " Do nothing, it handles itself
     else
-      " Make Solarized use 16 colors for Terminal support
       let g:solarized_termcolors=16
     endif
   endif
 endfunction
 
-function! ConfigTmux()
-  " Making cursor a bar in insert mode
+function! s:ConfigTmux()
   if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -152,5 +148,5 @@ function! ConfigTmux()
   endif
 endfunction
 
-call ConfigSolarized()
-call ConfigTmux()
+call s:ConfigSolarized()
+call s:ConfigTmux()
