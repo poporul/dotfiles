@@ -150,3 +150,9 @@ endfunction
 
 call s:ConfigSolarized()
 call s:ConfigTmux()
+
+function! s:Compile()
+  execute "!gcc -Wall % && ./a.out"
+endfunction
+
+command Compile :call s:Compile()
