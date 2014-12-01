@@ -156,3 +156,4 @@ function! s:Compile()
 endfunction
 
 command Compile :call s:Compile()
+nnoremap <leader>r :Compile<CR>
