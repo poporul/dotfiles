@@ -76,6 +76,7 @@ set listchars=tab:▸\ ,eol:¬
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
+au BufRead,BufNewFile {*.hbs,*.html.hbs} set ft=html
 
 " NERDTree
 let NERDTreeShowHidden=1
