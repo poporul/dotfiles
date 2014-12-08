@@ -126,7 +126,8 @@ nnoremap <C-S-h> :tabprevious<CR>
 nnoremap - x
 nnoremap <Space> viw
 
-imap <C-d> <Esc>ddi
+inoremap <C-d> <Esc>ddi
+inoremap jk <Esc>
 
 function! s:ConfigSolarized()
   if !has('gui_running')
