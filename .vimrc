@@ -23,9 +23,7 @@ set backupdir=$HOME/.vim/backup/
 set directory=$HOME/.vim/swap/
 set undodir=$HOME/.vim/undo/
 
-filetype on
-filetype indent on
-filetype plugin on
+filetype indent plugin on
 
 " Set map leader as comma
 let mapleader = ","
@@ -66,6 +64,7 @@ set smarttab
 
 set tabpagemax=10
 set showtabline=2
+set laststatus=2
 
 " Invisible character colors
 highlight NonText guifg=#4a4a59
@@ -92,7 +91,9 @@ set backspace=indent,eol,start
 " 256 colors for terminal vim
 set t_Co=256
 
-set mouse=a
+if has('mouse')
+  set mouse=a
+endif
 
 "This unsets the last search pattern register by hitting return
 nnoremap <cr> :noh<cr>
@@ -157,5 +158,18 @@ function! s:Compile()
   execute "!gcc -Wall % && ./a.out"
 endfunction
 
+function! s:ShowRuntimePaths()
+  let l:result = []
+  let l:paths = split(&runtimepath, ',')
+  for item in l:paths
+    call add(l:result, item)
+  endfor
+
+  call sort(l:result)
+  echo join(l:result, "\n")
+endfunction
+
 command Compile :call s:Compile()
+command ShowRuntimePaths :call s:ShowRuntimePaths()
+
 nnoremap <leader>r :Compile<CR>
