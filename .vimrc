@@ -77,6 +77,8 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile {*.hbs,*.html.hbs} set ft=html
 
+au FileType html setlocal softtabstop=4 tabstop=4 shiftwidth=4
+
 " NERDTree
 let NERDTreeShowHidden=1
 
