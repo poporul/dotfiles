@@ -157,7 +157,10 @@ call s:ConfigSolarized()
 call s:ConfigTmux()
 
 function! s:Compile()
-  execute "!gcc -Wall % && ./a.out"
+  let l:program_name = "vimcompiled"
+
+  execute "!gcc -Wall % -o " . l:program_name . " && ./vimcompiled"
+  silent execute "!rm " . l:program_name
 endfunction
 
 function! s:ShowRuntimePaths()
