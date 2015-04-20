@@ -73,7 +73,7 @@ highlight SpecialKey guifg=#4a4a59
 " use the same symbols as textmate for tabstops and eols
 set listchars=tab:▸\ ,eol:¬
 
-au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,config.ru,*.rabl} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 au BufRead,BufNewFile {*.hbs,*.html.hbs} set ft=html
 
