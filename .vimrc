@@ -13,9 +13,12 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 
 Plugin 'groenewege/vim-less'
+Plugin 'slim-template/vim-slim.git'
 
 Plugin 'L9'
 Plugin 'FuzzyFinder'
+
+Plugin 'lucapette/vim-ruby-doc'
 
 call vundle#end()
 
@@ -73,9 +76,13 @@ highlight SpecialKey guifg=#4a4a59
 " use the same symbols as textmate for tabstops and eols
 set listchars=tab:▸\ ,eol:¬
 
-au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,config.ru,*.rabl} set ft=ruby
-au BufRead,BufNewFile *.json set ft=javascript
-au BufRead,BufNewFile {*.hbs,*.html.hbs} set ft=html
+if !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+
+  au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,config.ru,*.rabl} set ft=ruby
+  au BufRead,BufNewFile *.json set ft=javascript
+  au BufRead,BufNewFile {*.hbs,*.html.hbs} set ft=html
+endif
 
 au FileType html setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
@@ -105,6 +112,7 @@ nnoremap <leader>w :w!<cr>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
+nmap <leader>p :CtrlP<CR>
 
 map <leader>q :NERDTreeToggle<CR>
 
