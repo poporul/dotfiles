@@ -1,6 +1,11 @@
 require 'pp'
 require 'irb/completion'
 
+begin
+  require 'awesome_print'
+rescue LoadError
+end
+
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irbhistory"
 IRB.conf[:SAVE_HISTORY] = 200
 IRB.conf[:AUTO_INDENT] = true
