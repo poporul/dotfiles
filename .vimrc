@@ -105,7 +105,7 @@ if has('mouse')
 endif
 
 "This unsets the last search pattern register by hitting return
-nnoremap <cr> :noh<cr>
+nnoremap <silent> <cr> :noh<cr>
 
 " Shortcut for save
 nnoremap <leader>w :w!<cr>
@@ -113,6 +113,7 @@ nnoremap <leader>w :w!<cr>
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 nmap <leader>p :CtrlP<CR>
+nmap <leader>cp :CtrlPClearCache<CR>
 
 map <leader>q :NERDTreeToggle<CR>
 
