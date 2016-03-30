@@ -14,7 +14,7 @@ source "$UTILS_PREFIX/.functions"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export PS1=${Yellow}'\u'${Reset}'@'${Cyan}'\h'${Reset}'[\w]'${Green}'$(git_branch)'${Reset}'\$ '
+export PS1="\[${Yellow}\]\u\[${Reset}\]@\[${Cyan}\]\h\[${Reset}\][\w]\[${Green}\]\$(git_branch)\[${Reset}\]\$ "
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 alias 'cd..'='cd ..'
