@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 function git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
@@ -7,4 +9,21 @@ function setrbenv {
   export RUBY_HEAP_SLOTS_INCREMENT=250000
   export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
   export RUBY_GC_MALLOC_LIMIT=50000000
+}
+
+function get_random_quote {
+  local lang=${1-"ru"}
+  local endpoint="http://api.forismatic.com/api/1.0/"
+  local params="method=getQuote&format=json&lang=${lang}"
+
+  curl -s "${endpoint}?${params}" > /dev/stdout |
+  ruby -rjson -e "puts \$stdin.eof ? 'Mooo' : JSON.parse(\$stdin.read)['quoteText']"
+}
+
+function show_lastlogin {
+  rm ~/.hushlogin 2> /dev/stdout
+}
+
+function hide_lastlogin {
+  touch ~/.hushlogin
 }

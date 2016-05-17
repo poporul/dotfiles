@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Reset
 Reset='\e[0m'           # Text Reset
 
