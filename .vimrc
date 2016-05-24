@@ -82,6 +82,9 @@ if !exists("autocommands_loaded")
   au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,config.ru,*.rabl} set ft=ruby
   au BufRead,BufNewFile *.json set ft=javascript
   au BufRead,BufNewFile {*.hbs,*.html.hbs} set ft=html
+
+  " tmp fix
+  au BufRead,BufNewFile *.html.slim set ft=slim
 endif
 
 au FileType html setlocal softtabstop=4 tabstop=4 shiftwidth=4
@@ -173,14 +176,8 @@ function! s:Compile()
 endfunction
 
 function! s:ShowRuntimePaths()
-  let l:result = []
-  let l:paths = split(&runtimepath, ',')
-  for item in l:paths
-    call add(l:result, item)
-  endfor
-
-  call sort(l:result)
-  echo join(l:result, "\n")
+  let l:paths = sort(split(&runtimepath, ','))
+  echo join(l:paths, "\n")
 endfunction
 
 command Compile :call s:Compile()
