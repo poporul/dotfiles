@@ -24,6 +24,7 @@ fi
 alias 'cd..'='cd ..'
 alias '..'='cd ..'
 alias '...'='cd ../..'
+alias 'be'='bundle exec'
 
 alias grep='grep --color=auto'
 
