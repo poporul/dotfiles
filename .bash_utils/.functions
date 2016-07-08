@@ -20,6 +20,24 @@ function get_random_quote {
   ruby -rjson -e "puts \$stdin.eof ? 'Mooo' : JSON.parse(\$stdin.read)['quoteText']"
 }
 
+function docker_init {
+  local machine=${1-"default"}
+  local exit_code=1
+
+  if [[ ! -e $(which docker-machine) ]]; then
+    echo "Docker machine is not installed"
+    return $exit_code
+  fi
+
+  if [[ $(docker-machine status ${machine} 2> /dev/null) == 'Running' ]]; then
+    echo "Connecting to [1;32m${machine}[0m docker machine..."
+    eval $(docker-machine env ${machine})
+  else
+    echo -e "Docker machine [1;33m${machine}[0m is not running"
+    return $exit_code
+  fi
+}
+
 function show_lastlogin {
   rm ~/.hushlogin 2> /dev/stdout
 }
